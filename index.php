@@ -35,7 +35,7 @@ include "funcs.php";
       if(!in_array($ext, $allowedExt)) die("<img src='https://i.ibb.co/qr88h2Z/HFiigFg.png' width='200' height='200'>Heker biadab");
       $uploaded = random().".".$ext;
       
-      if(copy($_FILES["img"]["tmp_name"], $uploaded)) {
+      if(copy($_FILES["img"]["tmp_name"], $_SERVER['DOCUMENT_ROOT']."/".$uploaded)) {
         $img = "http://".$_SERVER["HTTP_HOST"]."/".$uploaded;
         $post = "source=$img&upload-expiration=&type=url&action=upload";
         $curl = curl("https://imgbb.com/json", $post);
