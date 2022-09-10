@@ -1,2 +1,3 @@
 # ImgBB-Image-Uploader
-ImgBB
+
+Simple ImgBB Uploader with PHP
